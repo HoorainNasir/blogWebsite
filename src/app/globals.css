@@ -2,26 +2,403 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
-body {
-  color: var(--foreground);
-  background: var(--background);
+.navbar{
+  background-color: #219ebc;
+  color: white;
+  padding: 15px;
   font-family: Arial, Helvetica, sans-serif;
 }
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
+.navbar-button{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 25px;
+}
+
+.mainTitle{
+  background-color: #8ecae6;
+  color: #023047;
+  font-family: Arial, Helvetica, sans-serif;
+  line-height: 1.7rem;
+  font-size: large;
+  padding: 30px;
+  max-width: 750px;
+}
+
+.parentContainer{
+  background-color: #8ecae6;
+  padding: 15px;
+  display: flex;
+  justify-content:center;
+  width: 100%;
+  min-height: 100%;
+  flex-wrap: wrap;
+}
+
+.childContainer{
+  background-color: #ffc300;
+  border:  2px solid transparent;
+  font-family: Arial, Helvetica, sans-serif;
+  width: 300px;
+  height: 450px ;
+  border-radius: 15px;
+  padding: 15px;
+  margin: 10px;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+  transition-duration: 0.5s;
+}
+
+.childContainer:hover{
+  border: 2px solid #023047;
+}
+
+.imageContainer{
+  width: 100%;
+  height: 150px;
+}
+
+.title{
+  font-weight: bold;
+  font-size: 16px;
+  margin-top: 25px;
+  margin-bottom: 3px;
+  color: #023047;
+  
+}
+
+.description{
+  font-size: 14px;
+}
+
+.readMore{
+  background-color: transparent;
+  color: #023047;
+  border: 2px solid #023047;
+  font-size: 14px;
+  padding: 5px;
+  margin-top: 7px;
+}
+
+.readMore:hover{
+  color: #ffd60a;
+  background-color: #023047;
+}
+
+.detail{
+  background-color: #ffd60a;
+  border:  2px solid transparent;
+  font-family: Arial, Helvetica, sans-serif;
+  width: 90%;
+  min-height: 100%;
+  border-radius: 15px;
+  padding: 25px;
+  margin: 10px;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+}
+.detail a{
+  color: #023047;
+  font-size: medium;
+  font-weight: bold;
+}
+
+.heading{
+  color: #023047;
+  font-weight: bolder;
+  font-size: x-large;
+  text-align: center;
+  margin-bottom: 3px;
+}
+h1{
+  font-weight: bold;
+  font-size: larger;
+  margin-bottom: 5px;
+}
+h2{
+  font-size: large;
+  color: #023047;
+}
+p{
+  font-size: medium;
+}
+
+
+.dp{
+  width: 250px;
+  height: 250px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.imgContainer{
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.bgPic{
+  height: auto;
+  max-width: 100%;
+  object-fit: cover;
+}
+
+.content{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  padding: 20px;
+}
+
+.textContainer{
+    flex: 1;
+    padding: 20px;
+    align-items: center;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.textContainer h1{
+    color: #125;
+    font-size: xx-large;
+    text-align: center;
+}
+.textContainer h1 p{
+    line-height: 1.5;
+    color: #115;
+    font-size: 1.2rem;
+}
+
+.foot p{
+  font-family: Arial, Helvetica, sans-serif;
+  display: flex;
+  justify-content: center;
+  background-color: #023047;
+  color: white;
+}
+
+@media only screen and (max-width: 1280px) {
+
+  .imageContainer{
+    height: 160px;
+    width: auto;
+  }
+
+  .heading{
+    font-size: xx-large;
+    font-weight: bold;
+  }
+  h1{
+    font-size: 24px;
+  }
+  h2{
+    font-size: 21px;
+  }
+  p{
+    font-size: 22px;
+  }
+}
+
+@media only screen and (max-width: 1024px) {
+
+  .imageContainer{
+    height: 150px;
+    width: auto;
+  }
+
+  .heading{
+    font-size: xx-large;
+    font-weight: bold;
+  }
+  h1{
+    font-size: 24px;
+  }
+  h2{
+    font-size: 21px;
+  }
+  p{
+    font-size: 22px;
+  }
+}
+
+@media (max-width: 768px) {
+  .content{
+      flex-direction: column;
+      padding: 10px;
+      height: auto;
+  }
+
+  .textContainer{
+      text-align: center;
+      padding: 10px;
+  }
+
+  .bgPic{
+      width: 80%;
+  }
+
+  .dp{
+    width: 150px;
+    height: 150px;
+  }
+
+  .textContainer h1 p{
+      font-size: 1rem;
+  }
+
+  .textContainer h1{
+      font-size: x-large;
+  }
+
+  .childContainer{
+    width: 60%;
+    padding: 20px;
+  }
+
+  .imageContainer{
+    margin-left: 45px;
+    height: 170px;
+    width: auto;
+  }
+
+  h1{
+    font-size: 24px;
+  }
+}
+
+@media only screen and (max-width: 654px) {
+  .childContainer {
+    width: 350px;
+    padding: 20px;
+    padding-right: 30px;
+  }
+
+  .imageContainer{
+    height: 140px;
+    width: auto;
+    margin-right: 30px;
+  }
+
+  .mainTitle p{
+    font-size: 16px;
+    line-height: 1rem;
+  }
+}
+
+@media only screen and (max-width: 450px) {
+  .mainTitle p{
+    font-size: 16px;
+    line-height: 1rem;
+  }
+  .parentContainer{
+    padding: 20px;
+  }
+  
+  .childContainer {
+    width: 75%;
+    padding: 15px;
+  }
+
+  .imageContainer{
+    height: 120px;
+    width: 80%;
+    padding-right: 20px;
+  }
+
+  .heading{
+    font-size: medium;
+    font-weight: bold;
+  }
+  h1{
+    font-size: 21px;
+  }
+  h2{
+    font-size: 20px;
+  }
+}
+
+@media only screen and (max-width: 375px) {
+  .parentContainer{
+    padding: 0px;
+  }
+  
+  .childContainer {
+    width: 70%;
+    height: 400px;
+    padding: 10px;
+  }
+
+  .imageContainer{
+    height: 90px;
+    width: 70%;
+    margin-right: 20px;
+  }
+
+  .title{
+    font-size: 15px;
+  }
+  .description{
+    font-size: 13px;
+  }
+
+  .heading{
+    font-size: medium;
+    font-weight: bold;
+  }
+  h1{
+    font-size: 20px;
+  }
+  h2{
+    font-size: 19px;
+  }
+}
+@media only screen and (max-width: 344px) {
+  .mainTitle p{
+    font-size: 14px;
+    line-height: 1rem;
+  }
+  .mainTitle h1{
+    font-size: 17px;
+  }
+  .parentContainer{
+    padding: 5px;
+  }
+  
+  .childContainer {
+    width: 75%;
+    padding: 10px;
+  }
+
+  .imageContainer{
+    height: 100px;
+    width: auto;
+  }
+
+  .title{
+    font-size: 15px;
+  }
+  .description{
+    font-size: 13px;
+  }
+
+  .heading{
+    font-size: medium;
+    font-weight: bold;
+  }
+  h1{
+    font-size: 21px;
+    line-height: 1.3rem;
+  }
+  h2{
+    font-size: 20px;
+    line-height: 1rem;
+    margin-bottom: 5px;
+  }
+  p{
+    font-size: 16px;
+    line-height: 1rem;
   }
 }
